@@ -40,9 +40,7 @@
 |ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' | Memoire totale utilisée par un processus|
 |chmod +t /home/vinita/data| ajout du sticky bit sur data|
 |ipcs| NOmbre de segment mémoire d'oracle/postgrel |
-|echo "This is the body" \| 
-mail -s "Subject" -aFrom:Harry\<harry@gmail.com\>
-someone@example.com|Commande d'envoi de mail|
+|echo "This is the body" \| mail -s "Sujett" -aFrom:Harry\<harry@gmail.com\>someone@example.com|Commande d'envoi de mail|
 
 
 
