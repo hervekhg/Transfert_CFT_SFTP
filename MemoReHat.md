@@ -70,22 +70,19 @@ chmod 1755 /home/vinita/data </pre>
 Nombre de segment memoire d'Oracle/Postgrel
 <pre class='sortie_standard'> ipcs </pre>
 
-Créer un lien symbolique
-<pre class='sortie_standard'>ln -s Rep1/Rep2/Monfichier MonLien </pre>
-
 # Commande find
-|Commande|Description 
-|find fichier*| Recheche dans le dossier courant un fichier commancan par fichier|
-|||
-|||
-|||
-|||
+|Commande|Description| 
+|find -name *monfichier*.ogg |Recherche dans le dossier courant | 
+|find /home/ -name monfichier |Recherche le fichier monfichier dans toute la descendance de /home|
+|find . -mtime -5 |Recherche les fichiers du répertoire courant qui ont été modifiés entre maintenant et il y a 5 jours|
+|find /home/ -mtime -1 \! -type d |Recherche uniquement les fichiers (! -type d signifie n'était pas un répertoire) ayant été modifiés ces dernières 24h|
+|find . ! -user root |find . ! -user root |
+|find . \( -name '*.wmv' -o -name '*.wma' \) -exec rm {} \;|Recherche et supprime tous les fichiers WMA et WMV trouvés|
+|find . \( -type f -exec sudo chmod 664 "{}" \; \) , \( -type d -exec sudo chmod 775 "{}" \; \)|Modifie récursivement les droits en 664 sur les fichiers et en 775 sur les répertoires en une seule instruction|
 
+## Commande ps
 
-# Commande ps
-
-|Option|Description 
-|------ | --------|
+|Option|Description| 
 |-a|Affiche tous les jobs exécutés par l'utilisateur et le système|
 |-x|Affiche jobs et process confondus|
 |-A|Affiche tous les process exécutés par l'utilisateur et le système (équivalent à ps -ax)|
@@ -102,9 +99,8 @@ Créer un lien symbolique
 |ps aux --sort=-pcpu,+pmem |lister les processus par la consommation de CPU et Memoire
 |}
 
-# Commande awk
+## Commande awk
 |Option|Description 
-|------ | --------|
 |
 awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs|
 |awk 'END {print NR}' fichier|imprime le nombre total de lignes du fichiers|
@@ -112,9 +108,13 @@ awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier 
 |who \| awk '{print $1,$5}'|imprime le login et le temps de connexion|
 |awk 'length($0)>75 {print}' fichier'|	imprime les lignes de plus de 75 caractères. (print équivaur à print $0)|
 
-# Commande sed
+## Commande grep
+|Option|Description 
+|grep "oracle" * | Recherche tous les fichiers du répertoire courant contenant oracle|
+|grep -lR "oracle" * | Recherche récursivement et affiche la liste des fichiers contenant oracle|
+|grep -n "null" dump.txt| Retourne toutes les lignes et les numéros ou apparaissent null dans dump.txt|
 
-# Commande grep
+## Commande sed
 
 ******************************************************************************************
 ## Firewall
