@@ -72,12 +72,12 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 
 # Commande ps
-{|class="datatable" width="100%"
-!Option!!Description
-|-
-|-a|Affiche tous les jobs exécutés par l'utilisateur et le système
-|-x|Affiche jobs et process confondus
-|-A|Affiche tous les process exécutés par l'utilisateur et le système (équivalent à ps -ax)
+
+|Option|Description 
+|------ | --------|
+|-a|Affiche tous les jobs exécutés par l'utilisateur et le système|
+|-x|Affiche jobs et process confondus|
+|-A|Affiche tous les process exécutés par l'utilisateur et le système (équivalent à ps -ax)|
 |-j|Affiche plus de caractéristiques sur le processus, comme l'état (colonne STAT), ou l'utilisateur qui exécute le processus
 |-m|Affiche les processus par ordre d'utilisation de la mémoire, à la place du PID
 |-r|Affiche les processus par ordre d'utilisation du processeur
