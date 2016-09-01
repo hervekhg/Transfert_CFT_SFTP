@@ -1,5 +1,17 @@
 ****************************************************************************************
 # Red Hat Entreprise Linux
+###Install package 
+yum install package
+
+### Install package
+rpm -i package
+
+### Uninstall package
+rpm -e package
+
+###Check if package installed
+rpm -q package
+
 ##Apache Service : httpd
 
 ### installation
@@ -28,6 +40,19 @@ systemctl is-active httpd.service
 ### Check config
 apachectl configtest
 
+### Comment pouvez-vous calculer la mémoire totale utilisée par un serveur web ?
+ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}'
+
+### Sticky bit:
+Positionner sur un dossier, il n'autorise la suppression d'un fichier qu'à son proprétaire et root
+chmod +t /home/vinita/data
+chmod 1755 /home/vinita/data 
+<pre class='sortie_standard'>Test
+</pre>
+
+
+
+
 ******************************************************************************************
 ## Firewall
 ### Configure Firewall for http an https
@@ -38,7 +63,7 @@ firewall-cmd --add-service https
 firewall-cm --list-all
 
 *****************************************************************************************
-# SMTP server Red Hat (POP3 et IMAP)
+## SMTP server Red Hat (POP3 et IMAP)
 yum install dovecot
 
 ### Send Mail
@@ -49,15 +74,4 @@ systemctl start sendmail
 yum install samba
 
 ***************************************************************************************
-###Install package 
-yum install package
-yum update
 
-### Install package
-rpm -i package
-
-### Uninstall package
-rpm -e package
-
-###Check if package installed
-rpm -q package
