@@ -92,6 +92,14 @@ Nombre de segment memoire d'Oracle/Postgrel
 |}
 
 # Commande awk
+|Option|Description 
+|------ | --------|
+|
+awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs|
+|awk 'END {print NR}' fichier|imprime le nombre total de lignes du fichiers|
+|awk '{print $NF}' fichier|imprime le dernier champs de chaque ligne|
+|who \| awk '{print $1,$5}'|imprime le login et le temps de connexion|
+|awk 'length($0)>75 {print}' fichier'|	imprime les lignes de plus de 75 caractères. (print équivaur à print $0)|
 
 # Commande sed
 
