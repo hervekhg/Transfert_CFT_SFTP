@@ -1,45 +1,23 @@
 ****************************************************************************************
-# Gestion des package RHEL
+## Gestion des package RHEL
+|Commande|Description| 
+| ----------- | ------ |
+|yum install package|Installation d'un pacakge|
+|rpm -i package| Installation d'un package avec les sources|
+|rpm -e package| Désinstaller un package|
+|rpm -q package| Vérifier si un package est installé|
 
-Install package 
-<pre class='sortie_standard'>yum install package</pre>
-
-Install package
-<pre class='sortie_standard'> rpm -i package </pre>
-
-Uninstall package
-<pre class='sortie_standard'> rpm -e package </pre>
-
-Check if package installed
-<pre class='sortie_standard'> rpm -q package </pre>
-
-##Apache Service : httpd
-
-installation
-<pre class='sortie_standard'> yum install httpd </pre>
-
-Start Service
-<pre class='sortie_standard'> systemctl start httpd.service </pre>
-
-Restart Service
-<pre class='sortie_standard'> systemctl restart httpd.service </pre>
-
-Stop Service
-<pre class='sortie_standard'> systemctl stop httpd.service </pre>
-
-Reload Service
-<pre class='sortie_standard'> systemctl reload httpd.service
-apachectl graceful (Reload config without affect request) </pre>
-
-Check apache status
-<pre class='sortie_standard'> systemctl is-active httpd.service </pre>
-
-Editing configuration files
-<pre class='sortie_standard'>/etc/httpd/conf/httpd.conf : Main configuraiton file
-/etc/httpd/conf.d/ : Auxiliary directory </pre>
-
-Check config
-<pre class='sortie_standard'> apachectl configtest </pre>
+## Apache (httpd) pour RHEL
+|Commande|Description| 
+| ----------- | ------ |
+|yum install httpd |installation d'apache|
+|systemctl start httpd.service| Démarrage d'apache|
+|systemctl restart httpd.service| Redémarrage d'apache|
+|systemctl stop httpd.servic|Arrêt d'apache|
+|systemctl reload httpd.service ou apachectl graceful  | Recharge d'apache|
+|systemctl is-active httpd.service| Obtenir le statut d'apache|
+|apachectl configtest|Test de la configuration apache|
+|/etc/httpd/conf/httpd.conf; /etc/httpd/conf.d/ | Fichier de configuration|
 
 # Système Linux
 Date de dernier reboot
@@ -48,8 +26,7 @@ Date de dernier reboot
 Duree de fonctionnement du serveur
 <pre class='sortie_standard'> uptime </pre>
 
-Information sur le système
-
+#Information sur le système:uname
 |Commande|Description| 
 | ----------- | ------ | 
 |uname -s| nom du noyau|
