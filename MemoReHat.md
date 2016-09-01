@@ -2,7 +2,7 @@
 # Red Hat Entreprise Linux
 ###Install package 
 
-<pre class='sortie_standard'>yum install</pre>
+<pre class='sortie_standard'>yum install package</pre>
 
 ### Install package
 <pre class='sortie_standard'> rpm -i package </pre>
@@ -51,22 +51,22 @@ chmod 1755 /home/vinita/data </pre>
 ******************************************************************************************
 ## Firewall
 ### Configure Firewall for http an https
-firewall-cmd --add-service http
-firewall-cmd --add-service https
+<pre class='sortie_standard'>firewall-cmd --add-service http
+firewall-cmd --add-service https</pre>
 
 ### Check all service of Firewall
-firewall-cm --list-all
+<pre class='sortie_standard'>firewall-cm --list-all </pre>
 
 *****************************************************************************************
 ## SMTP server Red Hat (POP3 et IMAP)
-yum install dovecot
+<pre class='sortie_standard'> yum install dovecot </pre>
 
 ### Send Mail
-yum install sendmail
-systemctl start sendmail
+<pre class='sortie_standard'> yum install sendmail
+systemctl start sendmail </pre>
 
 ### File and print server
-yum install samba
+<pre class='sortie_standard'> yum install samba </pre>
 
 ***************************************************************************************
 
