@@ -8,7 +8,7 @@ Install package
 <pre class='sortie_standard'> rpm -i package </pre>
 
 Uninstall package
-<pre class='sortie_standard'>  -e package </pre>
+<pre class='sortie_standard'> rpm -e package </pre>
 
 Check if package installed
 <pre class='sortie_standard'> rpm -q package </pre>
@@ -49,12 +49,12 @@ Concat two file in one
 <pre class='sortie_standard'> cat fic1 && cat fic2 > fic3 </pre>
 
 Get info about type of file
-<pre class='sortie_standard'> file -i <filename.extension> </pre>
+<pre class='sortie_standard'> file -i fichier </pre>
 
 replace string in file
 <pre class='sortie_standard'> sed -i 's/Unix/UNIX/g' unix.txt </pre>
 
-Comment pouvez-vous calculer la mémoire totale utilisée par un serveur web ?
+Memoire totale utilisée par apache ?
 <pre class='sortie_standard'> ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' </pre>
 
 Sticky bit:
