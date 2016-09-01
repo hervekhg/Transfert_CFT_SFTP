@@ -49,6 +49,7 @@ Duree de fonctionnement du serveur
 <pre class='sortie_standard'> uptime </pre>
 
 Information sur le système
+
 |Commande|Description| 
 | ----------- | ------ | 
 |uname -s| nom du noyau|
