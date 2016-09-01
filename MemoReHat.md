@@ -19,13 +19,18 @@
 |apachectl configtest|Test de la configuration apache|
 |/etc/httpd/conf/httpd.conf; /etc/httpd/conf.d/ | Fichier de configuration|
 
-
 ## Firewall RHEL
 |Commande|Description| 
 | ----------- | ------ |
 |firewall-cmd --add-service http| configure le firewall pour le flux http|
 |firewall-cmd --add-service https |configure le firewall pour le flux https|
 |firewall-cm --list-all| lister tous les services du firewall|
+
+## Autres Service RHEL
+|Commande|Description| 
+| ----------- | ------ | 
+|yum install sendmail| package pour les mail|
+|yum install samb| package pour serveur de fichier et d'impiramnte|
 
 ## Commandes importantes
 |Commande|Description| 
@@ -142,18 +147,7 @@
 
 ## Commande sed
 
-******************************************************************************************
 
-*****************************************************************************************
-SMTP server Red Hat (POP3 et IMAP)
-<pre class='sortie_standard'> yum install dovecot </pre>
 
-Send Mail
-<pre class='sortie_standard'> yum install sendmail
-systemctl start sendmail </pre>
 
-### File and print server
-<pre class='sortie_standard'> yum install samba </pre>
-
-***************************************************************************************
 
