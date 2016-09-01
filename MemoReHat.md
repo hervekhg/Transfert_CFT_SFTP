@@ -1,5 +1,5 @@
 ****************************************************************************************
-# Red Hat Entreprise Linux
+# Gestion des package RHEL
 
 Install package 
 <pre class='sortie_standard'>yum install package</pre>
@@ -55,7 +55,7 @@ Information sur le système
 |uname -n|Affiche le nom de la machine (hostname)|
 |uname -r|Affiche la révision du noyau|
 |uname -v|Affiche la version du noyau|
-|uname -o|Affiche le nom du système d'exploitation
+|uname -o|Affiche le nom du système d'exploitation|
 |uname -a|Affiche tout|
 
 Liste des connectées au serveur
