@@ -48,6 +48,16 @@ Date de dernier reboot
 Duree de fonctionnement du serveur
 <pre class='sortie_standard'> uptime </pre>
 
+Information sur le système
+|Commande|Description| 
+| ----------- | ------ | 
+|uname -s| nom du noyau|
+|uname -n|Affiche le nom de la machine (hostname)|
+|uname -r|Affiche la révision du noyau|
+|uname -v|Affiche la version du noyau|
+|uname -o|Affiche le nom du système d'exploitation
+|uname -a|Affiche tout|
+
 Liste des connectées au serveur
 <pre class='sortie_standard'> who </pre>
 
@@ -72,7 +82,7 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 # Commande find
 |Commande|Description| 
-| :----------- | :------: | 
+| ----------- | ------ | 
 |find -name *monfichier*.ogg |Recherche dans le dossier courant |
 |find /home/ -name monfichier |Recherche le fichier monfichier dans toute la descendance de /home|
 |find . -mtime -5 |Recherche les fichiers du répertoire courant qui ont été modifiés entre maintenant et il y a 5 jours|
@@ -103,7 +113,7 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 ## Commande awk
 |Option|Description|
-| :----------- | :------: | 
+| ----------- | ------ | 
 |awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs|
 |awk 'END {print NR}' fichier|imprime le nombre total de lignes du fichiers|
 |awk '{print $NF}' fichier|imprime le dernier champs de chaque ligne|
@@ -112,10 +122,50 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 ## Commande grep
 |Option|Description 
-| :----------- | :------: | 
+| ----------- | ------ | 
 |grep "oracle" * | Recherche tous les fichiers du répertoire courant contenant oracle|
 |grep -lR "oracle" * | Recherche récursivement et affiche la liste des fichiers contenant oracle|
 |grep -n "null" dump.txt| Retourne toutes les lignes et les numéros ou apparaissent null dans dump.txt|
+
+## mount
+|Option|Description 
+| ----------- | ------ |
+|mount|Liste tous les systèmes de fichiers actuellement montés|
+|mount -a |Monte tous les systèmes de fichiers déclarés dans le fichier /etc/fstab|
+|mount /mnt/maPartion |Monte le système de fichiers ad-hoc déclarés dans le fichier /etc/fstab|
+|mount -t vfat -o defaults,rw,user,umask=022,uid=1000 /dev/sda1 /mnt/Mondisk/ |Monte un disque dur USB (/dev/sda1) formaté en FAT32 (-t vfat) en lecture écriture (rw) dans le répertoire /mnt/Mondisk/ ; tous les utilisateurs peuvent le démonter (user), les droits d'exécution (uid=1000) sont fixés à l'utilisateur ayant l'UID 1000 (sous Ubuntu, l'uid 1000 correspond au premier utilisateur créé) et la création d'un fichier s'effectuera avec les permissions 644 (rw-r---r--) et pour un répertoire 755 (rwxr-xr-x) (umask 022)|
+
+## umount
+|Option|Description 
+| ----------- | ------ |
+| umount /mnt/Mondisk  |umount /mnt/Mondisk |
+|umount -f /dev/cdrom |umount -f /dev/cdrom |
+|umount -d /mnt/monIso |Démonte et libère le périphérique loop|
+|umount -a |Démonte tous les systèmes de fichiers montés (à l'exception de /proc) ; ne sert que lorsque l'on veut redémarrer ou éteindre sa machine manuellement et proprement.|
+
+## adduser
+|Option|Description 
+| ----------- | ------ |
+|adduser MonUtilisateur | Crée l'utilisateur MonUtilisateur. |
+|adduser –disabled-password –no-create-home UtilisateurSSH |Crée un utilisateur UtilisateurSSH sans mot de passe qui ne pourra pas se connecter directement sur la machine et sans lui créer de répertoire home|
+|adduser –disabled-password –home /home/UtilisateurSSH UtilisateurSSH |Même chose qu'au-dessus sauf qu'on lui donne le même répertoire HOME qu'à l'utilisateur UtilisateurSSH créé en premier|
+|adduser UtilisateurSSH fuse | Ajoute l'utilisateur UtilisateurSSH (crée préalablement) dans le groupe "fuse", on peut faire aussi un: gpasswd -a $USER fuse|
+|adduser NouvelUtilisateur ––ingroup users|Crée l'utilisateur NouvelUtilisateur et l'ajoute au groupe "users"|
+
+## adduser
+|Option|Description 
+| ----------- | ------ |
+|deluser UtilisateurSSH |Supprime l'utilisateur UtilisateurSSH|
+|deluser –remove-home NouvelUtilisateur|Supprime l'utilisateur NouvelUtilisateur ainsi que le répertoire /home/NouvelUtilisateur|
+|deluser NouvelUtilisateur users |Supprime l'utilisateur NouvelUtilisateur du groupe "users"|
+
+## du
+|Option|Description 
+| ----------- | ------ |
+|du -hs dir |Affiche la taille du répertoire dir ou du répertoire courant si dir est omis |
+|du -ch /home/MonUtilisateur |Affiche la taille du répertoire dir ou du répertoire courant si dir est omis|
+|du -sm ~/Images/*.jpg |Affiche la taille totale des fichiers JPEG contenus dans le répertoire ~/Images|
+
 
 ## Commande sed
 
