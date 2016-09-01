@@ -72,6 +72,7 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 # Commande find
 |Commande|Description| 
+| :----------- | :------: | 
 |find -name *monfichier*.ogg |Recherche dans le dossier courant |
 |find /home/ -name monfichier |Recherche le fichier monfichier dans toute la descendance de /home|
 |find . -mtime -5 |Recherche les fichiers du répertoire courant qui ont été modifiés entre maintenant et il y a 5 jours|
@@ -82,7 +83,8 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 ## Commande ps
 
-|Option|Description| 
+|Option|Description|
+| :----------- | :------: | 
 |-a|Affiche tous les jobs exécutés par l'utilisateur et le système|
 |-x|Affiche jobs et process confondus|
 |-A|Affiche tous les process exécutés par l'utilisateur et le système (équivalent à ps -ax)|
@@ -100,9 +102,9 @@ Nombre de segment memoire d'Oracle/Postgrel
 |}
 
 ## Commande awk
-|Option|Description 
-|
-awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs|
+|Option|Description|
+| :----------- | :------: | 
+|awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier /etc/passwd après avoir effacé le deuxième champs|
 |awk 'END {print NR}' fichier|imprime le nombre total de lignes du fichiers|
 |awk '{print $NF}' fichier|imprime le dernier champs de chaque ligne|
 |who \| awk '{print $1,$5}'|imprime le login et le temps de connexion|
@@ -110,6 +112,7 @@ awk -F ":" '{ $2 = "" ; print $0 }' /etc/passwd|imprime chaque ligne du fichier 
 
 ## Commande grep
 |Option|Description 
+| :----------- | :------: | 
 |grep "oracle" * | Recherche tous les fichiers du répertoire courant contenant oracle|
 |grep -lR "oracle" * | Recherche récursivement et affiche la liste des fichiers contenant oracle|
 |grep -n "null" dump.txt| Retourne toutes les lignes et les numéros ou apparaissent null dans dump.txt|
