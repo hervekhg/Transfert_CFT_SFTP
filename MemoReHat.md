@@ -84,7 +84,7 @@ Nombre de segment memoire d'Oracle/Postgrel
 ## Commande ps
 
 |Option|Description|
-| :----------- | :------: | 
+| ----------- | ------ | 
 |-a|Affiche tous les jobs exécutés par l'utilisateur et le système|
 |-x|Affiche jobs et process confondus|
 |-A|Affiche tous les process exécutés par l'utilisateur et le système (équivalent à ps -ax)|
