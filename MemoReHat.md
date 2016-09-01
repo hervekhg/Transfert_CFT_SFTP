@@ -41,12 +41,28 @@ Editing configuration files
 Check config
 <pre class='sortie_standard'> apachectl configtest </pre>
 
+## Système Linux
+Check last reboo
+<pre class='sortie_standard'> who –b </pre>
+
+Concat two file in one
+<pre class='sortie_standard'> cat fic1 && cat fic2 > fic3 </pre>
+
+Get info about type of file
+<pre class='sortie_standard'> file -i <filename.extension> </pre>
+
+replace string in file
+<pre class='sortie_standard'> sed -i 's/Unix/UNIX/g' unix.txt </pre>
+
 Comment pouvez-vous calculer la mémoire totale utilisée par un serveur web ?
 <pre class='sortie_standard'> ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' </pre>
 
 Sticky bit:
 <pre class='sortie_standard'> chmod +t /home/vinita/data
 chmod 1755 /home/vinita/data </pre>
+
+Nombre de segment memoire d'Oracle/Postgrel
+<pre class='sortie_standard'> ipcs </pre>
 
 ******************************************************************************************
 ## Firewall
