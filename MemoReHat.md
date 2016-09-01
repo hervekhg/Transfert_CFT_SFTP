@@ -1,57 +1,52 @@
 ****************************************************************************************
 # Red Hat Entreprise Linux
 ###Install package 
-yum install package
+
+<pre class='sortie_standard'>yum install</pre>
 
 ### Install package
-rpm -i package
+<pre class='sortie_standard'> rpm -i package </pre>
 
 ### Uninstall package
-rpm -e package
+<pre class='sortie_standard'>  -e package </pre>
 
 ###Check if package installed
-rpm -q package
+<pre class='sortie_standard'> rpm -q package </pre>
 
 ##Apache Service : httpd
 
 ### installation
-yum install httpd
+<pre class='sortie_standard'> yum install httpd </pre>
 
 ### Start Service
-systemctl start httpd.service
+<pre class='sortie_standard'> systemctl start httpd.service </pre>
 
 ### Restart Service
-systemctl restart httpd.service
+<pre class='sortie_standard'> systemctl restart httpd.service </pre>
 
 ###Stop Service
-systemctl stop httpd.service
+<pre class='sortie_standard'> systemctl stop httpd.service </pre>
 
 ### Reload Service
-systemctl reload httpd.service
-apachectl graceful (Reload config without affect request)
+<pre class='sortie_standard'> systemctl reload httpd.service
+apachectl graceful (Reload config without affect request) </pre>
 
 ###Check apache status
-systemctl is-active httpd.service
+<pre class='sortie_standard'> systemctl is-active httpd.service </pre>
 
 ### Editing configuration files
-/etc/httpd/conf/httpd.conf : Main configuraiton file
-/etc/httpd/conf.d/ : Auxiliary directory
+<pre class='sortie_standard'>/etc/httpd/conf/httpd.conf : Main configuraiton file
+/etc/httpd/conf.d/ : Auxiliary directory </pre>
 
 ### Check config
-apachectl configtest
+<pre class='sortie_standard'> apachectl configtest </pre>
 
 ### Comment pouvez-vous calculer la mémoire totale utilisée par un serveur web ?
-ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}'
+<pre class='sortie_standard'> ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' </pre>
 
 ### Sticky bit:
-Positionner sur un dossier, il n'autorise la suppression d'un fichier qu'à son proprétaire et root
-chmod +t /home/vinita/data
-chmod 1755 /home/vinita/data 
-<pre class='sortie_standard'>Test
-</pre>
-
-
-
+<pre class='sortie_standard'> chmod +t /home/vinita/data
+chmod 1755 /home/vinita/data </pre>
 
 ******************************************************************************************
 ## Firewall
