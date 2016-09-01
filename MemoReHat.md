@@ -42,8 +42,14 @@ Check config
 <pre class='sortie_standard'> apachectl configtest </pre>
 
 ## Système Linux
-Check last reboo
+Date de dernier reboot
 <pre class='sortie_standard'> who –b </pre>
+
+Duree de fonctionnement du serveur
+<pre class='sortie_standard'> uptime </pre>
+
+Liste des connectées au serveur
+<pre class='sortie_standard'> who </pre>
 
 Concat two file in one
 <pre class='sortie_standard'> cat fic1 && cat fic2 > fic3 </pre>
@@ -63,6 +69,33 @@ chmod 1755 /home/vinita/data </pre>
 
 Nombre de segment memoire d'Oracle/Postgrel
 <pre class='sortie_standard'> ipcs </pre>
+
+
+# Commande ps
+{|class="datatable" width="100%"
+!Option!!Description
+|-
+|-a|Affiche tous les jobs exécutés par l'utilisateur et le système
+|-x|Affiche jobs et process confondus
+|-A|Affiche tous les process exécutés par l'utilisateur et le système (équivalent à ps -ax)
+|-j|Affiche plus de caractéristiques sur le processus, comme l'état (colonne STAT), ou l'utilisateur qui exécute le processus
+|-m|Affiche les processus par ordre d'utilisation de la mémoire, à la place du PID
+|-r|Affiche les processus par ordre d'utilisation du processeur
+|-u|Donne la liste des processus associés à un utilisateur.
+|ps -jax |affiche tous les processus en activité et le nom de leur utilisateur
+|ps -ef |lister tous les processus
+|ps -ax |lister tous les processus (BSD syntax)
+|ps -u |lister les processus lancé par un utilisateur
+|ps -ejH |lister les processus en arbres
+|ps -C apache2 |lister les processus associer à apache
+|ps aux --sort=-pcpu,+pmem |lister les processus par la consommation de CPU et Memoire
+|}
+
+# Commande awk
+
+# Commande sed
+
+# Commande grep
 
 ******************************************************************************************
 ## Firewall
