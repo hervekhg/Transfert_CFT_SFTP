@@ -19,33 +19,29 @@
 |apachectl configtest|Test de la configuration apache|
 |/etc/httpd/conf/httpd.conf; /etc/httpd/conf.d/ | Fichier de configuration|
 
-# Système Linux
-Date de dernier reboot
-<pre class='sortie_standard'> who –b </pre>
 
-Duree de fonctionnement du serveur
-<pre class='sortie_standard'> uptime </pre>
+## Firewall RHEL
+|Commande|Description| 
+| ----------- | ------ |
+|firewall-cmd --add-service http| configure le firewall pour le flux http|
+|firewall-cmd --add-service https |configure le firewall pour le flux https|
+|firewall-cm --list-all| lister tous les services du firewall|
 
-## Information sur le système:uname
+## Commandes importantes
 |Commande|Description| 
 | ----------- | ------ | 
-|uname -s| nom du noyau|
-|uname -n|Affiche le nom de la machine (hostname)|
-|uname -r|Affiche la révision du noyau|
-|uname -v|Affiche la version du noyau|
-|uname -o|Affiche le nom du système d'exploitation|
-|uname -a|Affiche tout|
-
-## Autres commandes
-|Commande|Description| 
-| ----------- | ------ | 
+|who –b |Date de dernier reboot|
+|uptime|Duree de fonctionnement du serveur|
 |who|Liste des utilisateurs connectés au serveur|
+|uname -a|Affiche toutes les informations sur le système|
 |cat fic1 && cat fic2 > fic3 | concatener deux fichiers|
 |file -i fichier| obtenir les informations sur le type de fichier|
 |sed -i 's/Unix/UNIX/g' unix.txt | remplace Unix par UNIX dans le fichier unix.txt|
 |ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' | Memoire totale utilisée par un processus|
 |chmod +t /home/vinita/data| ajout du sticky bit sur data|
-|NOmbre de segment mémoire d'oracle/postgrel | ipcs |
+|ipcs| NOmbre de segment mémoire d'oracle/postgrel |
+|echo "This is the body" \| mail -s "Subject" -aFrom:Harry\<harry@gmail.com\> someone@example.com|Commande d'envoi de mail|
+
 
 
 # Commande find
@@ -134,17 +130,19 @@ Duree de fonctionnement du serveur
 |du -ch /home/MonUtilisateur |Affiche la taille du répertoire dir ou du répertoire courant si dir est omis|
 |du -sm ~/Images/*.jpg |Affiche la taille totale des fichiers JPEG contenus dans le répertoire ~/Images|
 
+## Information sur le système:uname
+|Commande|Description| 
+| ----------- | ------ | 
+|uname -s| nom du noyau|
+|uname -n|Affiche le nom de la machine (hostname)|
+|uname -r|Affiche la révision du noyau|
+|uname -v|Affiche la version du noyau|
+|uname -o|Affiche le nom du système d'exploitation|
+|uname -a|Affiche tout|
 
 ## Commande sed
 
 ******************************************************************************************
-## Firewall
-Configure Firewall for http an https
-<pre class='sortie_standard'>firewall-cmd --add-service http
-firewall-cmd --add-service https</pre>
-
-check all service of Firewall
-<pre class='sortie_standard'>firewall-cm --list-all </pre>
 
 *****************************************************************************************
 SMTP server Red Hat (POP3 et IMAP)
