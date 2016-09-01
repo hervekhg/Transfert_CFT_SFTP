@@ -26,7 +26,7 @@ Date de dernier reboot
 Duree de fonctionnement du serveur
 <pre class='sortie_standard'> uptime </pre>
 
-#Information sur le système:uname
+## Information sur le système:uname
 |Commande|Description| 
 | ----------- | ------ | 
 |uname -s| nom du noyau|
@@ -36,27 +36,17 @@ Duree de fonctionnement du serveur
 |uname -o|Affiche le nom du système d'exploitation|
 |uname -a|Affiche tout|
 
-Liste des connectées au serveur
-<pre class='sortie_standard'> who </pre>
+## Autres commandes
+|Commande|Description| 
+| ----------- | ------ | 
+|who|Liste des utilisateurs connectés au serveur|
+|cat fic1 && cat fic2 > fic3 | concatener deux fichiers|
+|file -i fichier| obtenir les informations sur le type de fichier|
+|sed -i 's/Unix/UNIX/g' unix.txt | remplace Unix par UNIX dans le fichier unix.txt|
+|ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' | Memoire totale utilisée par un processus|
+|chmod +t /home/vinita/data| ajout du sticky bit sur data|
+|NOmbre de segment mémoire d'oracle/postgrel | ipcs |
 
-Concat two file in one
-<pre class='sortie_standard'> cat fic1 && cat fic2 > fic3 </pre>
-
-Get info about type of file
-<pre class='sortie_standard'> file -i fichier </pre>
-
-replace string in file
-<pre class='sortie_standard'> sed -i 's/Unix/UNIX/g' unix.txt </pre>
-
-Memoire totale utilisée par apache ?
-<pre class='sortie_standard'> ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' </pre>
-
-Sticky bit:
-<pre class='sortie_standard'> chmod +t /home/vinita/data
-chmod 1755 /home/vinita/data </pre>
-
-Nombre de segment memoire d'Oracle/Postgrel
-<pre class='sortie_standard'> ipcs </pre>
 
 # Commande find
 |Commande|Description| 
