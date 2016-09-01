@@ -41,7 +41,7 @@ Editing configuration files
 Check config
 <pre class='sortie_standard'> apachectl configtest </pre>
 
-## Système Linux
+# Système Linux
 Date de dernier reboot
 <pre class='sortie_standard'> who –b </pre>
 
@@ -69,6 +69,17 @@ chmod 1755 /home/vinita/data </pre>
 
 Nombre de segment memoire d'Oracle/Postgrel
 <pre class='sortie_standard'> ipcs </pre>
+
+Créer un lien symbolique
+<pre class='sortie_standard'>ln -s Rep1/Rep2/Monfichier MonLien </pre>
+
+# Commande find
+|Commande|Description 
+|find fichier*| Recheche dans le dossier courant un fichier commancan par fichier|
+|||
+|||
+|||
+|||
 
 
 # Commande ps
