@@ -72,7 +72,7 @@ Nombre de segment memoire d'Oracle/Postgrel
 
 # Commande find
 |Commande|Description| 
-|find -name *monfichier*.ogg |Recherche dans le dossier courant 
+|find -name *monfichier*.ogg |Recherche dans le dossier courant |
 |find /home/ -name monfichier |Recherche le fichier monfichier dans toute la descendance de /home|
 |find . -mtime -5 |Recherche les fichiers du répertoire courant qui ont été modifiés entre maintenant et il y a 5 jours|
 |find /home/ -mtime -1 \! -type d |Recherche uniquement les fichiers (! -type d signifie n'était pas un répertoire) ayant été modifiés ces dernières 24h|
