@@ -10,58 +10,58 @@ Install package
 Uninstall package
 <pre class='sortie_standard'>  -e package </pre>
 
-###Check if package installed
+Check if package installed
 <pre class='sortie_standard'> rpm -q package </pre>
 
 ##Apache Service : httpd
 
-### installation
+installation
 <pre class='sortie_standard'> yum install httpd </pre>
 
-### Start Service
+Start Service
 <pre class='sortie_standard'> systemctl start httpd.service </pre>
 
-### Restart Service
+Restart Service
 <pre class='sortie_standard'> systemctl restart httpd.service </pre>
 
-###Stop Service
+Stop Service
 <pre class='sortie_standard'> systemctl stop httpd.service </pre>
 
-### Reload Service
+Reload Service
 <pre class='sortie_standard'> systemctl reload httpd.service
 apachectl graceful (Reload config without affect request) </pre>
 
-###Check apache status
+Check apache status
 <pre class='sortie_standard'> systemctl is-active httpd.service </pre>
 
-### Editing configuration files
+Editing configuration files
 <pre class='sortie_standard'>/etc/httpd/conf/httpd.conf : Main configuraiton file
 /etc/httpd/conf.d/ : Auxiliary directory </pre>
 
-### Check config
+Check config
 <pre class='sortie_standard'> apachectl configtest </pre>
 
-### Comment pouvez-vous calculer la mémoire totale utilisée par un serveur web ?
+Comment pouvez-vous calculer la mémoire totale utilisée par un serveur web ?
 <pre class='sortie_standard'> ps auxf | grep apache2 | grep -v grep | awk '{s+=$6} END {print s}' </pre>
 
-### Sticky bit:
+Sticky bit:
 <pre class='sortie_standard'> chmod +t /home/vinita/data
 chmod 1755 /home/vinita/data </pre>
 
 ******************************************************************************************
 ## Firewall
-### Configure Firewall for http an https
+Configure Firewall for http an https
 <pre class='sortie_standard'>firewall-cmd --add-service http
 firewall-cmd --add-service https</pre>
 
-### Check all service of Firewall
+check all service of Firewall
 <pre class='sortie_standard'>firewall-cm --list-all </pre>
 
 *****************************************************************************************
-## SMTP server Red Hat (POP3 et IMAP)
+SMTP server Red Hat (POP3 et IMAP)
 <pre class='sortie_standard'> yum install dovecot </pre>
 
-### Send Mail
+Send Mail
 <pre class='sortie_standard'> yum install sendmail
 systemctl start sendmail </pre>
 
