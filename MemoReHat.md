@@ -1,13 +1,13 @@
 ****************************************************************************************
 # Red Hat Entreprise Linux
-###Install package 
 
+Install package 
 <pre class='sortie_standard'>yum install package</pre>
 
-### Install package
+Install package
 <pre class='sortie_standard'> rpm -i package </pre>
 
-### Uninstall package
+Uninstall package
 <pre class='sortie_standard'>  -e package </pre>
 
 ###Check if package installed
