@@ -12,7 +12,7 @@ La configuration correcte des paramètres:
 est primordiale pour fixer les performance d’apache.  **Il n’y a aucune valeur universelle pour ces valeurs qui dépendent uniquement des ressources et de l'utilisation de votre serveur**. 
 **La ressource la plus importante car la plus limitative de votre serveur est la mémoire**. C’est la quantité de mémoire de votre serveur qui pose une limite physique au nombre de connections simultanées. Le paramètre permettant de fixer le nombre maximum de clients que apache peut servir en même temps est MaxClients. 
 
-### MaxClients ###
+## MaxClients ##
 Pour déterminer la valeur de MaxClient il faut tout d’abord estimer la quantité de mémoire que vous souhaitez allouer à apache. Un bon moyen d’estimer cette quantité de mémoire et d’arrêter apache et de faire un **"ps - aux"**. On fait alors la somme de la colonne RSS, que l’on soustrait à la quantité de mémoire du serveur. Par sécurité, on diminue la valeur obtenue de 10%. 
 Par exemple, nous obtenons 720Mo. 
 Maintenant nous allons déterminer la taille d’un processus apache. Apache étant en fonctionnement, avec la commande **"ps aux | grep apache"** on fait la moyenne de la colonne RSS. (Selon le serveur, apache peut s’exécuter sous différents utilisateurs : http, apache, apache2, www-data etc…) Nous obtenons 14Mo. 
@@ -27,7 +27,7 @@ Comment savoir si on a dépassé la valeur allouée à MaxClients ? En regardant
 <pre> [error] server reached MaxClients settings, consider raising the MaxClients setting </pre>
 
 
-### MaxRequestsPerChild ### 
+## MaxRequestsPerChild ##
 Ce paramètre fixe la limite du nombre de demandes qu'un processus apache satisfera en générant un processus fils avant de mourir. Il faut savoir qu’un processus fils consomme plus de mémoire après chaque demande. 
 * Si MaxRequestsPerChild vaut 0, alors le processus ne meurt jamais, sa taille augmente au fur est en mesure des demandes et vous vous retrouvez avec la mémoire du serveur saturée et apache qui ne réponds pratiquement plus. 
 * Si MaxRequestsPerChild vaut 1, alors le processus meurt après chaque service. Le nouveau processus crée pour repondre au client utilise un minimum de mémoire mais en contrepartie, sa génération est plus lente. 
@@ -38,10 +38,10 @@ Pour déterminer la valeur la plus appropriée il vous faudra faire des tests de
 
 **MinSpareServers, MaxSpareServers et StartServers sont seulement importants pour déterminer les temps de réponses vis-à-vis des clients**
 
-### StartServers ### 
+## StartServers ##
 Défini le nombre de processus crées par apache lors de son lancement. Sur certaine config, apache n’est « jamais » redémarré ce qui rend ce paramètre insignifiant. Si apache est redémarré fréquemment, cette valeur doit être suffisante pour servir le nombre de clients au moment du lancement d’apache. 
 
-### MinSpareServers et  MaxSpareServers ###
+## MinSpareServers et  MaxSpareServers ##
 Fixent les limites basse et haute en nombre de processus dormant (sleeping) qu’apache doit maintenir. Si ce nombre de processus dépasse MaxSpareServers, les processus en trop seront tués, si ce nombre est inférieur à MinSpareServers, les processus manquants seront crées. 
 La création de processus étant gourmande en mémoire, ne réglez pas ces valeurs trop bas. Mais la encore, votre serveur est unique et il vous faudra effectuer des test. Un bon moyen de trouver les bonnes valeurs est de régler ces paramètres de façon à ce qu’apache n’ai pas à créer plus de 4 processus enfant par seconde. Vous allez me dire mais comment on le sait ! 8O 
 
