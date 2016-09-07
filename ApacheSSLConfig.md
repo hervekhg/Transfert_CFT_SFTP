@@ -13,7 +13,7 @@ Note: The ssl.key directory must be only readable by root.
 Step 4: Now you need to edit httpd.conf file in /etc/apache2
 <pre>
 Alias /mediawiki "/opt/mediawiki"
-\<VirtualHost *:443\>
+"<"VirtualHost *:443">"
         ServerAdmin hk@site.fr
         ServerName mediawiki.test.fr
         ServerAlias mediawiki
@@ -28,6 +28,6 @@ Alias /mediawiki "/opt/mediawiki"
         SSLCertificateFile /etc/ssl/certs/test.crt
         SSLCertificateKeyFile /etc/ssl/private/test.key
 
-\<\/VirtualHost\>
+"<"/VirtualHost">"
 </pre>
 
