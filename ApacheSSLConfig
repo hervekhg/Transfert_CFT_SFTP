@@ -1,0 +1,21 @@
+# Exemple configuration apache
+Alias /mediawiki "/opt/mediawiki"
+
+<VirtualHost *:443>
+        ServerAdmin hk@site.fr
+        ServerName mediawiki.test.fr
+        ServerAlias mediawiki
+        DocumentRoot /opt/mediawiki
+        <Directory "/opt/mediawiki">
+                Options Indexes MultiViews
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+        SSLEngine on
+
+        SSLCertificateFile /etc/ssl/certs/test.crt
+        SSLCertificateKeyFile /etc/ssl/private/test.key
+
+</VirtualHost>
