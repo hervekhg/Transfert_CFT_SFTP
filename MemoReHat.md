@@ -49,7 +49,7 @@
 
 
 
-# Commande find
+## Commande find
 |Commande|Description| 
 | ----------- | ------ | 
 |find -name *monfichier*.ogg |Recherche dans le dossier courant |
@@ -79,6 +79,10 @@
 |ps -C apache2 |lister les processus associer à apache
 |ps aux --sort=-pcpu,+pmem |lister les processus par la consommation de CPU et Memoire
 |}
+
+## Commande Chroot
+|Option|Description|
+| ----------- | ------ | 
 
 ## Commande awk
 |Option|Description|
