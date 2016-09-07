@@ -28,6 +28,21 @@ Alias /mediawiki "/opt/mediawiki"
         SSLCertificateFile /etc/ssl/certs/mydomain.crt
         SSLCertificateKeyFile /etc/ssl/private/mydomain.key
 "<"/VirtualHost">"
+</pre>
 
+* **Step 5**: You can get to the default site using SSL just by browsing to https://localhost (you don't need to add the port to the end of the URL). If you want to forward all HTTP requests to HTTPS (which is what I believe you are trying to achieve), you can either add a permanent redirect, or use the Apache module mod_rewrite. **The easiest and most secure way is to set up a permanent redirect**. Enable named virtual hosts and add a Redirect directive to the VirtualHost in /etc/httpd/conf/httpd.conf.
+
+<pre>
+NameVirtualHost *:80
+"<"VirtualHost *:80">"
+   ServerName localhost
+   Redirect permanent / https://localhost
+"<"/VirtualHost">"
+</pre>
+
+* **Step 5**: If you want to turn SSL off, comment out these lines in /etc/httpd/conf.d/ssl.conf and restart Apache.
+<pre>
+LoadModule ssl_module modules/mod_ssl.so
+Listen 443
 </pre>
 
