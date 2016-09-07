@@ -40,7 +40,7 @@ NameVirtualHost *:80
 "<"/VirtualHost">"
 </pre>
 
-* **Step 5**: If you want to turn SSL off, comment out these lines in /etc/httpd/conf.d/ssl.conf and restart Apache.
+* **Step 6**: If you want to turn SSL off, comment out these lines in /etc/httpd/conf.d/ssl.conf and restart Apache.
 <pre>
 LoadModule ssl_module modules/mod_ssl.so
 Listen 443
