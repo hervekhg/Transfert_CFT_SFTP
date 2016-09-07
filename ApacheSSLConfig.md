@@ -27,7 +27,7 @@ Alias /mediawiki "/opt/mediawiki"
         SSLEngine on
         SSLCertificateFile /etc/ssl/certs/mydomain.crt
         SSLCertificateKeyFile /etc/ssl/private/mydomain.key
-
 "<"/VirtualHost">"
+
 </pre>
 
