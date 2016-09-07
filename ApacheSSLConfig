@@ -1,6 +1,7 @@
 # Exemple configuration apache
 Alias /mediawiki "/opt/mediawiki"
 
+<pre>
 <VirtualHost *:443>
         ServerAdmin hk@site.fr
         ServerName mediawiki.test.fr
@@ -19,3 +20,4 @@ Alias /mediawiki "/opt/mediawiki"
         SSLCertificateKeyFile /etc/ssl/private/test.key
 
 </VirtualHost>
+</pre>
