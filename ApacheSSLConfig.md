@@ -1,4 +1,4 @@
-# Exemple configuration apache
+# Exemple configuration SSL apache
 * **Step 1**: Use OpenSSL to produce the keys that are used to secure your site. 
 These keys are used when encrypting and decrypting the traffic to your secure site.
 This command will create a 1024 bit private key and puts it in the file mydomain.key.
@@ -25,8 +25,8 @@ Alias /mediawiki "/opt/mediawiki"
                 Allow from all
         </Directory\>
         SSLEngine on
-        SSLCertificateFile /etc/ssl/certs/test.crt
-        SSLCertificateKeyFile /etc/ssl/private/test.key
+        SSLCertificateFile /etc/ssl/certs/mydomain.crt
+        SSLCertificateKeyFile /etc/ssl/private/mydomain.key
 
 "<"/VirtualHost">"
 </pre>
