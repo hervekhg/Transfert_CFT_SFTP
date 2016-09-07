@@ -7,7 +7,7 @@ La configuration correcte des paramètres:
 * **MaxSpareServers** 
 * **StartServers** 
 * **MaxClients** 
-* **MaxRequestsPerChild **
+* **MaxRequestsPerChild**
 
 est primordiale pour fixer les performance d’apache.  **Il n’y a aucune valeur universelle pour ces valeurs qui dépendent uniquement des ressources et de l'utilisation de votre serveur**. 
 **La ressource la plus importante car la plus limitative de votre serveur est la mémoire**. C’est la quantité de mémoire de votre serveur qui pose une limite physique au nombre de connections simultanées. Le paramètre permettant de fixer le nombre maximum de clients que apache peut servir en même temps est MaxClients. 
@@ -32,11 +32,11 @@ Ce paramètre fixe la limite du nombre de demandes qu'un processus apache satisf
 * Si MaxRequestsPerChild vaut 0, alors le processus ne meurt jamais, sa taille augmente au fur est en mesure des demandes et vous vous retrouvez avec la mémoire du serveur saturée et apache qui ne réponds pratiquement plus. 
 * Si MaxRequestsPerChild vaut 1, alors le processus meurt après chaque service. Le nouveau processus crée pour repondre au client utilise un minimum de mémoire mais en contrepartie, sa génération est plus lente. 
 
-Le choix de cette valeur est un compromis entre ** l’utilisation mémoire et la vitesse d’exécution **. Moins votre contenu est dynamique, plus haute peut être la valeur de ce paramètre. Si la valeur est trop faible, vous consommerais beaucoup de CPU pour créer des processus, si elle est trop élevée vous verrez augmenter la taille de vos processus apache. Gardez à l’esprit que plus vos processus apache sont lourds plus vous serez emmené à réduire le MaxClients. 
+Le choix de cette valeur est un compromis entre **l’utilisation mémoire et la vitesse d’exécution**. Moins votre contenu est dynamique, plus haute peut être la valeur de ce paramètre. Si la valeur est trop faible, vous consommerais beaucoup de CPU pour créer des processus, si elle est trop élevée vous verrez augmenter la taille de vos processus apache. Gardez à l’esprit que plus vos processus apache sont lourds plus vous serez emmené à réduire le MaxClients. 
 
 Pour déterminer la valeur la plus appropriée il vous faudra faire des tests de valeurs entre 50 et 1000 selon votre utilisation du serveur. Lors d’une commande "ps aux –sort :rss" observez la durée de vie de vos processus apache et considérez en regard la taille des processus, cela vous donnera des pistes. 
 
-** MinSpareServers, MaxSpareServers et StartServers sont seulement importants pour déterminer les temps de réponses vis-à-vis des clients **
+**MinSpareServers, MaxSpareServers et StartServers sont seulement importants pour déterminer les temps de réponses vis-à-vis des clients**
 
 ### StartServers ### 
 Défini le nombre de processus crées par apache lors de son lancement. Sur certaine config, apache n’est « jamais » redémarré ce qui rend ce paramètre insignifiant. Si apache est redémarré fréquemment, cette valeur doit être suffisante pour servir le nombre de clients au moment du lancement d’apache. 
@@ -49,9 +49,9 @@ C’est simple, si apache crée plus de 4 processus enfant par seconde vous aure
 <pre> :wink: </pre> 
 
 Mais ne vous focalisez pas sur ces deux valeurs qui ne sont pas critiques. 
-* ** MinSspareServers **:  doit être assez haut pour absorber un pic de requêtes
-* ** MaxSpareServers **: doit être assez haut pour couvrir les fluctuations normales du nombre de requêtes. 
-Leur limite étant bien sur ** MaxClients ** 
+* **MinSspareServers**:  doit être assez haut pour absorber un pic de requêtes
+* **MaxSpareServers**: doit être assez haut pour couvrir les fluctuations normales du nombre de requêtes. 
+Leur limite étant bien sur **MaxClients** 
 
 Il nous reste deux paramètre de configuration concernant le gestion des processus apache:
 
