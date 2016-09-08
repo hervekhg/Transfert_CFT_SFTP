@@ -47,8 +47,6 @@
 |ipcs| NOmbre de segment mémoire d'oracle/postgrel |
 |echo "This is the body" \| mail -s "Sujett" -aFrom:Harry\<harry@gmail.com\>someone@example.com|Commande d'envoi de mail|
 
-
-
 ## Commande find
 |Commande|Description| 
 | ----------- | ------ | 
@@ -61,7 +59,6 @@
 |find . \( -type f -exec sudo chmod 664 "{}" \; \) , \( -type d -exec sudo chmod 775 "{}" \; \)|Modifie récursivement les droits en 664 sur les fichiers et en 775 sur les répertoires en une seule instruction|
 
 ## Commande ps
-
 |Option|Description|
 | ----------- | ------ | 
 |-a|Affiche tous les jobs exécutés par l'utilisateur et le système|
@@ -106,6 +103,8 @@
 |mount|Liste tous les systèmes de fichiers actuellement montés|
 |mount -a |Monte tous les systèmes de fichiers déclarés dans le fichier /etc/fstab|
 |mount /mnt/maPartion |Monte le système de fichiers ad-hoc déclarés dans le fichier /etc/fstab|
+|mount -t proc /proc /aa/proc|Monte le dossier /proc dans la partition /aa/proc|
+|mount --bind /proc_old proc_new |Monte l'ancien système de fichier /proc_old dans le nouveau proc_new|
 |mount -t vfat -o defaults,rw,user,umask=022,uid=1000 /dev/sda1 /mnt/Mondisk/ |Monte un disque dur USB (/dev/sda1) formaté en FAT32 (-t vfat) en lecture écriture (rw) dans le répertoire /mnt/Mondisk/ ; tous les utilisateurs peuvent le démonter (user), les droits d'exécution (uid=1000) sont fixés à l'utilisateur ayant l'UID 1000 (sous Ubuntu, l'uid 1000 correspond au premier utilisateur créé) et la création d'un fichier s'effectuera avec les permissions 644 (rw-r---r--) et pour un répertoire 755 (rwxr-xr-x) (umask 022)|
 
 ## umount
