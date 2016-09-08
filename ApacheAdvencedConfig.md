@@ -66,3 +66,64 @@ Permet d’autoriser l’envoie de requêtes multiples sur la même connexion TC
 
 ## KeepAliveTimeout ##
 Détermine la durée d’attente de la prochaine requête. Si cette valeur est trop élevée, vos processus enfant sont immobilisés en état d’attente au lieu de servir les requêtes. Personnellement je conseille entre 2 et 5 secondes pour cette valeur. 
+
+## Mesurer les performances apache ##
+ab -n 1000 -c 10 http://mediawiki.rennes.astek.fr/index.html
+<pre>
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking mediawiki.rennes.astek.fr (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.14
+Server Hostname:        mediawiki.rennes.astek.fr
+Server Port:            80
+
+Document Path:          /index.html
+Document Length:        208 bytes
+
+Concurrency Level:      10
+Time taken for tests:   0.616 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      1002
+Total transferred:      402804 bytes
+HTML transferred:       208416 bytes
+Requests per second:    1624.68 [#/sec] (mean)
+Time per request:       6.155 [ms] (mean)
+Time per request:       0.616 [ms] (mean, across all concurrent requests)
+Transfer rate:          639.09 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    2   5.2      1      55
+Processing:     1    4   6.0      1      45
+Waiting:        0    3   4.7      1      37
+Total:          2    6   8.8      2      75
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      6
+  80%      9
+  90%     15
+  95%     24
+  98%     35
+  99%     49
+ 100%     75 (longest request)
+
+</pre>
