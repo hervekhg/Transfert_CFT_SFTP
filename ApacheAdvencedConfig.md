@@ -68,7 +68,7 @@ Permet d’autoriser l’envoie de requêtes multiples sur la même connexion TC
 Détermine la durée d’attente de la prochaine requête. Si cette valeur est trop élevée, vos processus enfant sont immobilisés en état d’attente au lieu de servir les requêtes. Personnellement je conseille entre 2 et 5 secondes pour cette valeur. 
 
 ## Mesurer les performances apache ##
-ab -n 1000 -c 10 http://mediawiki.rennes.astek.fr/index.html
+ab -n 1000 -c 10 http://mediawiki.test.fr/index.html
 <pre>
 This is ApacheBench, Version 2.3 <$Revision: 655654 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
