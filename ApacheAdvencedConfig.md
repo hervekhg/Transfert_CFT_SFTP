@@ -1,5 +1,9 @@
 ## INTRODUCTION A LA CONFIGURATION D'APACHE ##
 
+### Source
+http://forum.webrankinfo.com/bien-configurer-apache-t63439.html
+
+
 Une des raisons du succès d’apache est, entre autres, sa souplesse d’utilisation. Malheureusement, la documentations Apache est plutôt sibylline en matière d’optimisation et qui plus est, en anglais ce qui pousse pas mal de webmaster à jouer aux apprentis sorciers avec le paramétrage d’apache. 
 J'ai potassé les docs apaches ce week-end et rcherché quelques notes dans mes cahiers pour essayer de vous aider à y voir plus clair en détaillant les principaux paramètres de configuration d’apache en matière de performances (je ne parle que des paramètres commun à tous les serveurs web indépendamment de tel ou tel module apache). Ne vous attendez cependant pas à ce que je vous donne une configuration type car cela n’existe pas ! 
 La configuration correcte des paramètres:
