@@ -2,6 +2,7 @@
 
 ### Source
 http://forum.webrankinfo.com/bien-configurer-apache-t63439.html
+https://www.system-linux.eu/?post/2009/01/02/Configuration-en-tout-genre-et-fichier-de-conf-dapache
 
 
 Une des raisons du succès d’apache est, entre autres, sa souplesse d’utilisation. Malheureusement, la documentations Apache est plutôt sibylline en matière d’optimisation et qui plus est, en anglais ce qui pousse pas mal de webmaster à jouer aux apprentis sorciers avec le paramétrage d’apache. 
