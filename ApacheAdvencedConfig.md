@@ -74,7 +74,7 @@ This is ApacheBench, Version 2.3 <$Revision: 655654 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking mediawiki.rennes.astek.fr (be patient)
+Benchmarking mediawiki.test.fr (be patient)
 Completed 100 requests
 Completed 200 requests
 Completed 300 requests
@@ -89,7 +89,7 @@ Finished 1000 requests
 
 
 Server Software:        Apache/2.2.14
-Server Hostname:        mediawiki.rennes.astek.fr
+Server Hostname:        mediawiki.test.fr
 Server Port:            80
 
 Document Path:          /index.html
