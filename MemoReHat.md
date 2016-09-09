@@ -38,6 +38,7 @@
 |who –b |Date de dernier reboot|
 |uptime|Duree de fonctionnement du serveur|
 |who|Liste des utilisateurs connectés au serveur|
+|lsof|Liste des fichiers ouvert et les processus associés|
 |uname -a|Affiche toutes les informations sur le système|
 |cat fic1 && cat fic2 > fic3 | concatener deux fichiers|
 |file -i fichier| obtenir les informations sur le type de fichier|
