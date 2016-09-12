@@ -36,6 +36,7 @@
 |Commande|Description| 
 | ----------- | ------ | 
 |who –b |Date de dernier reboot|
+|grep -v '#' fichier | Affiche toutes les lignes ne contenant pas "#"|
 |uptime|Duree de fonctionnement du serveur|
 |who|Liste des utilisateurs connectés au serveur|
 |lsof|Liste des fichiers ouvert et les processus associés|
@@ -47,6 +48,8 @@
 |chmod +t /home/vinita/data| ajout du sticky bit sur data|
 |ipcs| NOmbre de segment mémoire d'oracle/postgrel |
 |echo "This is the body" \| mail -s "Sujett" -aFrom:Harry\<harry@gmail.com\>someone@example.com|Commande d'envoi de mail|
+|cat fichier \| while read ligne
+do print $ligne done| Lire chaque ligne d'un fichier|
 
 ## Commande find
 |Commande|Description| 
