@@ -79,7 +79,17 @@ do print $ligne done| Lire chaque ligne d'un fichier|
 |ps -ejH |lister les processus en arbres
 |ps -C apache2 |lister les processus associer à apache
 |ps aux --sort=-pcpu,+pmem |lister les processus par la consommation de CPU et Memoire
-|}
+|ps -eo pmem,pcpu,pid,args \| tail -n +2 \| sort -rnk 1 \| head|**Processus consommant le plus de mémoire**|
+|ps -eo pmem,pcpu,pid,args \| tail -n +2 \| sort -rnk 2 \| head|**Processus consommant le plus de CPU**|
+### Explications dernières commandes
+- ps Liste des processus courants
+- -e Selectionner l’ensemble des process
+- o Spécifier un format utilisateur
+- pmem,pcpu,pid,args format utilisateur définir par mémoire,cpu, numéro de pid et commande
+- \| tail -n +2 Sortie standard à partir de la seconde ligne (pour éviter la sortie des intitulés de colonnes comme %MEM, etc ...)
+- \| sort -rnk 1 Classé par ordre numérique (n) décroissant (r) suivant la première colonne (mémoire)
+- \| sort -rnk 2 Classé par ordre numérique (n) décroissant (r) suivant la seconde colonne (cpu)
+- \| head Sortie des 10 premières lignes
 
 ## Commande Chroot
 |Option|Description|
